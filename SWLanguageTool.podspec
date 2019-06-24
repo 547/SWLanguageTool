@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "SWLanguageTool"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of SWLanguageTool."
+  spec.summary      = "封装的关于app内切换语言的便捷方法（利用lproj文件）."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,9 +25,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+根据平时开发需求，封装的关于app内切换语言的便捷方法（利用lproj文件）
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/SWLanguageTool"
+  spec.homepage     = "https://github.com/547/SWLanguageTool"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,8 +39,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT (example)"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -52,8 +53,8 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Seven Wang" => "seven.wang@supernovachina.com" }
-  # Or just: spec.author    = "Seven Wang"
+  # spec.author             = { "Seven Wang" => "seven.wang@supernovachina.com" }
+  spec.author    = "Seven Wang"
   # spec.authors            = { "Seven Wang" => "seven.wang@supernovachina.com" }
   # spec.social_media_url   = "https://twitter.com/Seven Wang"
 
@@ -64,7 +65,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -79,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/SWLanguageTool.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/547/SWLanguageTool.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,10 +91,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  spec.source_files  = "SWLanguageTool", "SWLanguageTool/**/*.{h,m,swift}"
+  # spec.exclude_files = "SWLanguageTool/Exclude"
 
-  # spec.public_header_files = "Classes/**/*.h"
+  # spec.public_header_files = "SWLanguageTool/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -117,8 +118,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
-
+  spec.frameworks = "Foundation"
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
 
@@ -133,5 +133,7 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
+
+  spec.swift_version = "5.0"
 
 end
